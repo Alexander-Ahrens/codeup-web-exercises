@@ -23,7 +23,7 @@ This file is named welcome.css
     {
         /*background: darkblue;
         background-color: rgb(105, 105, 250);*/
-        background-size: width: 40%;
+        width: 40%;
 
 
     }
@@ -51,6 +51,7 @@ This file is named welcome.css
     {
         padding-bottom: 50px;
         size: auto;
-        background-size: height: 20px; width:40px;
+        height: 20px;
+        width:40px;
     }
     
