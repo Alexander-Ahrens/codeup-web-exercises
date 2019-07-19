@@ -43,7 +43,7 @@ fieldset {
     width: 80%;
 
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
-    margin: center;
+    margin: 0px auto;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -78,7 +78,7 @@ fieldset {
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: calc(100% - 18px);
+    width: calc(100% - 4px);
 }
 
 .btn {
