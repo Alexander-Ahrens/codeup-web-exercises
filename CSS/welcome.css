@@ -4,7 +4,7 @@ This file is named welcome.css
 
 
     /* Centers main title and all other "h1" elements */
-    header>h1
+    .fancy-header>h1
     {
         text-align: center;
     }
@@ -12,22 +12,45 @@ This file is named welcome.css
     /* underlines and changes color of font for headers */
     header
     {
+
         text-decoration: underline;
+        text-align: center;
+
         /*color: #270987;*/
     }
 
-    /* changes background color of page */
+    h3
+    {
+        /*background: darkblue;
+        background-color: rgb(105, 105, 250);*/
+        background-size: width: 1px; height: 23px;
+
+
+    }
+
+    /* changes all the background stuffs */
     body
     {
+        /*text-align: center;*/
         background-color: rgba(144, 144, 144, .8);
         background-image: url(../img/binary.jpg);
+        background-attachment: fixed;
         background-size: unset;
         height: 150vh;
         color: blanchedalmond;
         font-family: "Al Tarikh";
+
     }
+
     ul
     {
         list-style: circle;
+    }
+
+    table>tr
+    {
+        padding-bottom: 50px;
+        size: auto;
+        background-size: height: 20px; width:40px;
     }
     
