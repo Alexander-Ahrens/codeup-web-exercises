@@ -7,8 +7,8 @@
 <body>
         <!--------header w/ pic -------->
     <header>
-        <img width="100" height="100" src="eventually" alt="pizzaPic">
-        <h1>Ahrens' Delicious Pizza</h1>
+        <a href="picOfPizzaLogo"><img width="100" height="100" src="eventually" alt="pizzaPic">
+        <h1>Ahrens' Delicious Pizza</h1></a>
 
         <p>The best pizza you'll ever have or you owe us double!</p>
     </header>
@@ -18,11 +18,12 @@
         <!-------- style selection for the pizza -------->
         <section>
             <h3>Style</h3>
-            <select name="pizzaStyle" id="style"></select>
-            <option value="handTossed">Hand Tossed</option>
-            <option value="traditional">Traditional</option>
-            <option value="thinCrust">Thin Crust</option>
-            <option value="burnt">Burnt to a Crisp</option>
+            <select name="style" id="style">
+                <option value="handTossed">Hand Tossed</option>
+                <option value="traditional">Traditional</option>
+                <option value="thinCrust">Thin Crust</option>
+                <option value="burnt">Burnt to a Crisp</option>
+             </select>
 
             <!--- <img width="50" height="50" src="eventually" alt="handtossedPic">
              <label for="handTossed">Hand Tossed</label>
@@ -111,11 +112,27 @@
             <label for="allToppings">All the Toppings!</label>
             <input type="radio" value="10" name="toppings" id="allToppings">
         </section>
-
+        <hr>
+        <br>
+        <section>
+            <h3>Customer Information</h3>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName">
+            <input type="text" id="lastName">
+            <input type="text" id="billingAddress">
+            <input type="text" id="zipCode">
+            <input type="text" id="city">
+            <select name="state" id="state"></select>
+            <br>
+            <input type="textarea" id="comments">
+            <input type= "text" id= "" name="">
+        </section>
 
     </main>
+        <br>
+        <hr>
     <footer>
-
+        &#9400;	Ahrens' Pizza, LLC Copyright 2019
     </footer>
 </body>
 </html>

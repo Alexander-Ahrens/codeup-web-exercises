@@ -1,0 +1,33 @@
+/*
+This file is named welcome.css
+*/
+
+
+    /* Centers main title and all other "h1" elements */
+    header>h1
+    {
+        text-align: center;
+    }
+
+    /* underlines and changes color of font for headers */
+    header
+    {
+        text-decoration: underline;
+        /*color: #270987;*/
+    }
+
+    /* changes background color of page */
+    body
+    {
+        background-color: rgba(144, 144, 144, .8);
+        background-image: url(../img/binary.jpg);
+        background-size: unset;
+        height: 150vh;
+        color: blanchedalmond;
+        font-family: "Al Tarikh";
+    }
+    ul
+    {
+        list-style: circle;
+    }
+    
