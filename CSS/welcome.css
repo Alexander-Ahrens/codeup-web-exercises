@@ -19,6 +19,13 @@ This file is named welcome.css
         /*color: #270987;*/
     }
 
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        background-size: 100px;
+
+    }
+
     h3
     {
         /*background: darkblue;
@@ -40,6 +47,23 @@ This file is named welcome.css
         color: blanchedalmond;
         font-family: "Al Tarikh";
 
+
+    }
+
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        margin: 25px;
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        margin: 25px;
+        margin-right: 200px;
+        margin-left: 200px;
     }
 
     ul
