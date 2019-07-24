@@ -1,0 +1,81 @@
+/*
+This file is named welcome.css
+*/
+
+
+    /* Centers main title and all other "h1" elements */
+    .fancy-header>h1
+    {
+        text-align: center;
+    }
+
+    /* underlines and changes color of font for headers */
+    header
+    {
+
+        text-decoration: underline;
+        text-align: center;
+
+        /*color: #270987;*/
+    }
+
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        background-size: 100px;
+
+    }
+
+    h3
+    {
+        /*background: darkblue;
+        background-color: rgb(105, 105, 250);*/
+        width: 40%;
+
+
+    }
+
+    /* changes all the background stuffs */
+    body
+    {
+        /*text-align: center;*/
+        background-color: rgba(144, 144, 144, .8);
+        background-image: url(../img/binary.jpg);
+        background-attachment: fixed;
+        background-size: unset;
+        height: 150vh;
+        color: blanchedalmond;
+        font-family: "Al Tarikh";
+
+
+    }
+
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        margin: 25px;
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+
+    .section1
+    {
+        background-color: rgb(10, 10, 78);
+        margin: 25px;
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+
+    ul
+    {
+        list-style: circle;
+    }
+
+    table>tr
+    {
+        padding-bottom: 50px;
+        size: auto;
+        height: 20px;
+        width:40px;
+    }
+    
