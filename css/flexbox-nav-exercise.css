@@ -1,0 +1,70 @@
+
+a
+{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+html
+{
+    box-sizing: border-box;
+    height: 4.25em;
+}
+
+.logo
+{
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif ;
+    position: absolute;
+    padding: .2em 0;
+    margin: .2em auto;
+}
+
+body
+{
+    font-family: "Work Sans";
+    margin: 0;
+}
+
+body.h4
+{
+
+}
+
+.top-nav
+{
+    background-color: #848480;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+a:hover
+{
+    color: blue ;
+    background-color: transparent;
+}
+
+ul
+{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.lists
+{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: "Work Sans";
+
+}
+
+.babylists
+{
+    margin: 1em;
+}
