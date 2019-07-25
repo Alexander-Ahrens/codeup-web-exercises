@@ -3,6 +3,11 @@ html
     box-sizing: border-box;
 }
 
+header
+{
+
+}
+
 body
 {
     margin: 0;
@@ -24,6 +29,11 @@ main
     /*text-align: center;*/
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer
+{
+
 }
 
 
