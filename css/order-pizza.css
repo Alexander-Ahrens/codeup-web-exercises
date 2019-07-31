@@ -1,0 +1,54 @@
+.navbar
+{
+    border-top-color: darkgray;
+    border: lightgray solid 1px;
+}
+
+/*.jumbotron-fluid*/
+/*{*/
+/*    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-color: white;*/
+/*    position: relative;*/
+/*}*/
+
+/*.container-responsive*/
+/*{*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.display-4*/
+/*{*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    background-color: white;*/
+/*    transform: translate(-50%, -50%);*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    opacity: .8;*/
+/*    margin: 100%;*/
+
+/*}*/
+
+
+section {
+    margin-top: 30px;
+}
+
+.jumbo-styling {
+    background-image: url("img/pizza.png");
+    border-radius: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.jumbo-styling h1 {
+    background: white;
+    color: #444;
+    opacity: .7;
+    font-size: 4em;
+    font-weight: 400;
+}
