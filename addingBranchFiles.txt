@@ -1,0 +1,5 @@
+add
+commit
+checkout to branch master
+merge
+git push
