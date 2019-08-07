@@ -90,9 +90,9 @@ var random = Math.floor((Math.random() * 3) + 1);
     function calculateTip(tipPercentage, billTotal) {
         return tipPercentage * billTotal;
 
-     calculateTip(0.20, 20), 4); // returns 4
-     calculateTip(0.25, 25.50), 6.375); // returns 6.375
-     calculateTip(0.15, 33.42), 5.013); // returns 5.013
+     console.log(calculateTip(0.20, 20), 4); // returns 4
+     console.log(calculateTip(0.25, 25.50), 6.375); // returns 6.375
+     console.log(calculateTip(0.15, 33.42), 5.013); // returns 5.013
 
 /**
  * TODO:
