@@ -25,16 +25,16 @@
      */
 
     //var planetsString = planetsArray.join('<br/>')
-    console.log(planetsArray.join('<br/>'));
+    console.log(planetsArray.join('<br>'));
 
     /**
-     *
      * BONUS:
      * Create another string that would display your planets in an undordered
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
     // console.log(planetsArray.join('<ul><li></li></ul>'));
-    var ul = planetsArray;
+
+    planetsString = "<ul><li>" + planetsArray.join("<li/><li>") + "</li></ul>";
     console.log(planetsArray)
 })();
