@@ -12,6 +12,16 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+        firstName: "Alexander",
+        lastName: "Ahrens"
+    };
+//    console.log("This person's name is " + this.firstName + " " + this.lastName);
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    console.log("");
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +31,13 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = function() {
+        console.log("Hello, " + this.firstName + " " + this.lastName + "! How are you today?");
+    };
+    person.sayHello();
+
+    console.log("");
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +53,31 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    // If shoppers buy groceries that have a cost greater than $200 dollars, then they get a 12% discount (amount * .12)
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+     for (var i = 0 ; i < shoppers.length; i++) {
+         if (shoppers[i].amount < 200) {
+             console.log(shoppers[i].name + " paid " + shoppers[i].amount + ".")
+         } else (console.log(shoppers[i].name + " paid " + (shoppers[i].amount - (shoppers[i].amount * .12))));
+     }
+
+    console.log("");
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +91,122 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    // Common Sense - Thomas Paine
+    // Rasputin: Faith, Power, and the Twilight of the Romanovs - Douglas Smith
+    // The Martian - Andy Weir
+    // 1984 - George Orwell
+    // Dracula - Bram Stoker
+    // Strange Case of Dr. Jekyll and Mr. Hyde - Robert Stevens
+
+    var books = [
+            {
+                title: "Common Sense",
+                author: {
+                    firstName: "Thomas",
+                    lastName: "Paine"
+                }
+            },
+
+            {
+                title: "Rasputin: Faith, Power, and the Twilight of the Romanovs",
+                author: {
+                    firstName: "Douglas",
+                    lastName: "Smith"
+                }
+            },
+
+            {
+                title: "The Martian",
+                author: {
+                firstName: "Andy",
+                lastName: "Weir"
+                }
+            },
+
+            {
+                title: "1984",
+                author: {
+                firstName: "George",
+                lastName: "Orwell"
+                }
+            },
+
+            {
+                title: "Dracula",
+                author: {
+                    firstName: "Bram",
+                    lastName: "Stoker"
+                }
+            },
+
+            {
+                title: "Strange Case of Dr. Jekyll and Mr. Hyde",
+                author: {
+                    firstName: "Robert",
+                    lastName: "Stevens"
+                }
+            },
+
+        ];
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+    console.log("------");
+
+    console.log(books[1].title);
+    console.log(books[1].author.firstName);
+    console.log(books[1].author.lastName);
+    console.log("------");
+
+    console.log(books[2].title);
+    console.log(books[2].author.firstName);
+    console.log(books[2].author.lastName);
+    console.log("------");
+
+    console.log(books[3].title);
+    console.log(books[3].author.firstName);
+    console.log(books[3].author.lastName);
+    console.log("------");
+
+    console.log(books[4].title);
+    console.log(books[4].author.firstName);
+    console.log(books[4].author.lastName);
+    console.log("------");
+
+    console.log(books[5].title);
+    console.log(books[5].author.firstName);
+    console.log(books[5].author.lastName);
+    console.log("------");
+
+    console.log("");
+
+    // var books = {};
+
+    // books.title = "Common Sense";
+    // books.firstName = "Thomas";
+    // books.lastName ="Paine";
+    //
+    // books.title = "Rasputin: Faith, Power and the Twilight of the Romanovs";
+    // books.firstName = "Douglas";
+    // books.lastName = "Smith"
+    //
+    // books.title = "The Martian";
+    // books.firstName = "Andy";
+    // books.lastName ="Weir";
+    //
+    // books.title - "1984";
+    // books.firstName = "George";
+    // books.lastName = "Orwell";
+    //
+    // books.title - "Dracula";
+    // books.firstName = "Bram";
+    // books.lastName = "Stoker";
+    //
+    // books.title - "Strange Case of Dr. Jekyll and Mr. Hyde";
+    // books.firstName = "Robert";
+    // books.lastName = "Stevens";
+
 
     /**
      * TODO:
@@ -80,15 +233,45 @@
      *      ...
      */
 
+    // for (i = 0 ; i < books.length; i++) {
+    //     console.log("Book # " + books[i]);
+    //     console.log("Title: " + books[i].title);
+    //     console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName)
+    //     console.log("---");
+    // }
+
+    books.forEach(function(element, index) {
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + element.title);
+        console.log("Author: " + element.author.firstName + " " + element.author.lastName);
+        console.log("------");
+
+    });
+
+    console.log("");
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
+     *
      * - Create a function named `showBookInfo` that accepts a book object and
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
 
+        function createBook(bookTitle, authorName) {
+        var book = {
+                title: bookTitle,
+                author: {
+                firstName: authorName.split(" ")[0],
+                lastName: authorName.split(" ")[1]
+        }
+        };
+        return book;
+        }
+
+    console.log(createBook("bookTitle", "author name"));
 })();
