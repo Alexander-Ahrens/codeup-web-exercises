@@ -20,8 +20,9 @@
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
-            if(doRounding == true) {
-                Math.round(circle.getArea());
+            var area = this.getArea();
+            if(doRounding === true) {
+                area = Math.round(area);
             } else {
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
