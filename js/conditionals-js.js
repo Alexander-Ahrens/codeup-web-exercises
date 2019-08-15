@@ -34,12 +34,12 @@ function evaluateTrafficLight(lightColor) {
     else if (lightColor === "yellow") {
         alert("Whoa there cowboy!")
     }
-    else (lightColor === "red") {
+    else (lightColor === "red");
         alert("STOP!!!")
     }
 }
 
-var = weatherMessage;
+var weatherMessage = weather;
 
 switch (weather) {
     case "rainy":

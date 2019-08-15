@@ -88,45 +88,47 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
     function calculateTip(tipPercentage, billTotal) {
-        return tipPercentage * billTotal;
+    return tipPercentage * billTotal;
 
-     console.log(calculateTip(0.20, 20), 4); // returns 4
-     console.log(calculateTip(0.25, 25.50), 6.375); // returns 6.375
-     console.log(calculateTip(0.15, 33.42), 5.013); // returns 5.013
+    console.log(calculateTip(0.20, 20), 4); // returns 4
+    console.log(calculateTip(0.25, 25.50), 6.375); // returns 6.375
+    console.log(calculateTip(0.15, 33.42), 5.013); // returns 5.013
 
-/**
- * TODO:
- * Use prompt and alert in combination with your calculateTip function to
- * prompt the user for the bill total and a percentage they would like to tip,
- * then display the dollar amount they should tip
- */
+    /**
+     * TODO:
+     * Use prompt and alert in combination with your calculateTip function to
+     * prompt the user for the bill total and a percentage they would like to tip,
+     * then display the dollar amount they should tip
+     */
 
     var totalBill = prompt("What is the total bill");
     var tipPercentage = prompt("How much do you want to tip?");
 
-    function formatNumToCurrency(num){
+    function formatNumToCurrency(num) {
         return "$" + num.toFixed(2);
     }
 
     alert("You will tip: " + formatNumToCurrency(calculateTip(tipPercentage, totalBill)));
 
 
-/**
- * TODO:
- * Create a function named `applyDiscount`. This function should accept a price
- * (before a discount is applied), and a discount percentage (a number between 0
- * and 1). It should return the result of applying the discount to the original
- * price.
- *
- * Example:
- * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
- *
- * > applyDiscount(45.99, 0.12) // 40.4712
- */
+    /**
+     * TODO:
+     * Create a function named `applyDiscount`. This function should accept a price
+     * (before a discount is applied), and a discount percentage (a number between 0
+     * and 1). It should return the result of applying the discount to the original
+     * price.
+     *
+     * Example:
+     * > var originalPrice = 100;
+     * > var dicountPercent = .2; // 20%
+     * > applyDiscount(originalPrice, dicountPercent) // 80
+     *
+     * > applyDiscount(45.99, 0.12) // 40.4712
+     */
 
     function applyDiscount(originalPrice, discountPrice) {
         return price - (originalPrice * discountPrice);
     }
+
     console.log(applyDiscount(100, .2), 80);
+}

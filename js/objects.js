@@ -33,9 +33,9 @@
      */
 
     person.sayHello = function() {
-        console.log("Hello, " + this.firstName + " " + this.lastName + "! How are you today?");
+        return "Hello, " + this.firstName + " " + this.lastName + "! How are you today?";
     };
-    person.sayHello();
+    console.log(person.sayHello());;
 
     console.log("");
 
@@ -55,27 +55,32 @@
 
     // If shoppers buy groceries that have a cost greater than $200 dollars, then they get a 12% discount (amount * .12)
     //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-
 
     var shoppers = [
-        {name: 'Cameron', amount: 180},
+        {name: 'Cameron', amount: 180},    //name and amount are properties.
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
 
-     for (var i = 0 ; i < shoppers.length; i++) {
-         if (shoppers[i].amount < 200) {
-             console.log(shoppers[i].name + " paid " + shoppers[i].amount + ".")
-         } else (console.log(shoppers[i].name + " paid " + (shoppers[i].amount - (shoppers[i].amount * .12))));
-     }
+    shoppers.forEach(function(shopper) {
+        if (shopper.amount >= 200) {
+            var saved = shopper.amount * .12;
+            var discount = shopper.amount - (shopper.amount * .12);
+            console.log(("Hello " + shopper.name + "! Your original maount was " + shopper.amount + ". Your discount was 12%. " +
+                "Your total after your discount is $" + discount));
+        } else {
+            var amountNeededForDiscount = 200 - shopper.amount;
+            console.log(("Sorry, " + shopper.name + ", no discount for you. If you spend $" +
+                amountNeededForDiscount + ", you could get that sweet 12% off. You owe us $" + shopper.amount));
+        }
+    })
+
+
+     // for (var i = 0 ; i < shoppers.length; i++) {
+     //     if (shoppers[i].amount < 200) {
+     //         console.log(shoppers[i].name + " paid " + shoppers[i].amount + ".")
+     //     } else (console.log(shoppers[i].name + " paid " + (shoppers[i].amount - (shoppers[i].amount * .12))));
+     // }
 
     console.log("");
 
@@ -149,37 +154,43 @@
             },
 
         ];
-    console.log(books[0].title);
-    console.log(books[0].author.firstName);
-    console.log(books[0].author.lastName);
-    console.log("------");
-
-    console.log(books[1].title);
-    console.log(books[1].author.firstName);
-    console.log(books[1].author.lastName);
-    console.log("------");
-
-    console.log(books[2].title);
-    console.log(books[2].author.firstName);
-    console.log(books[2].author.lastName);
-    console.log("------");
-
-    console.log(books[3].title);
-    console.log(books[3].author.firstName);
-    console.log(books[3].author.lastName);
-    console.log("------");
-
-    console.log(books[4].title);
-    console.log(books[4].author.firstName);
-    console.log(books[4].author.lastName);
-    console.log("------");
-
-    console.log(books[5].title);
-    console.log(books[5].author.firstName);
-    console.log(books[5].author.lastName);
-    console.log("------");
-
-    console.log("");
+    books.forEach(function(book, i) {
+        console.log("Book # " + (i + 1));
+        console.log("Title:  " + book.title);
+        console.log("Book # " + book.author.firstName + " " + book.author.lastName);
+        console.log("---")
+    })
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
+    // console.log("------");
+    //
+    // console.log(books[1].title);
+    // console.log(books[1].author.firstName);
+    // console.log(books[1].author.lastName);
+    // console.log("------");
+    //
+    // console.log(books[2].title);
+    // console.log(books[2].author.firstName);
+    // console.log(books[2].author.lastName);
+    // console.log("------");
+    //
+    // console.log(books[3].title);
+    // console.log(books[3].author.firstName);
+    // console.log(books[3].author.lastName);
+    // console.log("------");
+    //
+    // console.log(books[4].title);
+    // console.log(books[4].author.firstName);
+    // console.log(books[4].author.lastName);
+    // console.log("------");
+    //
+    // console.log(books[5].title);
+    // console.log(books[5].author.firstName);
+    // console.log(books[5].author.lastName);
+    // console.log("------");
+    //
+    // console.log("");
 
     // var books = {};
 
