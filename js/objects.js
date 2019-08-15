@@ -277,12 +277,22 @@
         var book = {
                 title: bookTitle,
                 author: {
-                firstName: authorName.split(" ")[0],
-                lastName: authorName.split(" ")[1]
-        }
-        };
-        return book;
-        }
+                    firstName: authorName.split(" ")[0],
+                    lastName: authorName.split(" ")[1]
+                    }
+                };
+            return book;
+            }
 
     console.log(createBook("bookTitle", "author name"));
+
+
+       function showBookInfo(book) {
+           console.log(createBook("bookTitle", "author name"));
+       }
+
+       books.forEach(function(book, i) {
+           console.log("Book # " + (i + 1));
+           showBookInfo(book);
+    })
 })();
