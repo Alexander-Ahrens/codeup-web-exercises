@@ -15,7 +15,7 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 <h2 id="subHeader">Hello Again.</h2>
-<p class="sub-paragraph">
+<p class="subParagraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -50,21 +50,19 @@
 
         // TODO: Set text color on every other list item to grey
         for (var i = 0; i < listItems.length; i++) {
-            var dbId = listItems[i].getAttribute("data-dbid");
-            listItems.style.color = "grey"
+                listItems[i++].style.color = "grey";
+
+        // TODO: Set text color of li with dbid = 1 to blue
+                listItems[0].style.color = "blue";
         }
 
 
-        // TODO: Set text color of li with dbid = 1 to blue
-
-
-
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraph = document.getElementsByClassName("subParagraph");
 
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-
+        subParagraph[0].textContent = "Mission Accomplished!";
 
     })();
 </script>
