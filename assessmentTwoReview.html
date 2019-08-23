@@ -1,0 +1,390 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Practice Functions Solutions</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--​-->
+<!--<h1>JS Assessment Review</h1>-->
+<!--<ul>-->
+<!--    <li>Example for Mapbox API Exercise is up on GitHub (Link already shared in slack).</li>-->
+<!--    <li>Quiz after Lunch!</li>-->
+<!--    <li>Assessment tomorrow! (Loops, Arrays, and Objects)</li>-->
+<!--    <li>Thursday Tech Talk™: Mark Ross from H-E-B!</li>-->
+<!--    <li>Monthly Coding Challenge - Coding Luau this Thursday after class at the Geekdom Event Center!</li>-->
+<!--    <li>Learn To Code this Saturday - See Justin!</li>-->
+<!--</ul>-->
+<!--​-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    // ------------- PRACTICE 1-->
+<!--    //TODO: Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.-->
+<!--// ​   // write a function &ndash;&gt; filterNumbers-->
+<!--//     // accepts na array &ndash;&gt; parameter &ndash;&gt; since it's an array, we need to loop-->
+<!--//     // mixed data type &ndash;&gt; need to check to make sure if the input is a number-->
+<!--//     // return an array &ndash;&gt; need an empty array to return-->
+<!--//     // acsending order &ndash;&gt; .sort()-->
+<!--    ​-->
+<!--    var testInput = ["fred", true, 5, 3];-->
+
+<!--    ​function filterNumbers(arrayOfData) {-->
+<!--        var newArray = [];-->
+<!--        arrayOfData.forEach(function (data) {-->
+<!--            console.log(data);-->
+
+<!--            if (typeof data === "number") {-->
+<!--                console.log(data);-->
+<!--                newArray.push(data);-->
+<!--            }-->
+<!--        });-->
+<!--        return newArray.sort();-->
+<!--        // (function (a, b) {-->
+<!--        //     return a - b;-->
+<!--        // });-->
+<!--    }-->
+<!--    filterNumbers(testInput);-->
+
+
+
+<!--    // ------------- PRACTICE 2-->
+<!--    // TODO: Write a function, getOlder() that takes in array of dog objects and increases the value of the age properties by 1.-->
+
+    // 1. Write a function --> getOlder()
+    // 2. Takes an array --> parameter and we have to loop
+    // 3. .age() property it increase the value of age by one --> .age + 1
+    // 4.
+
+    ​
+    var dogs = [
+        {
+            name: "Chompers",
+            breed: "Pug",
+            age: 7
+        },
+        {
+            name: "Freddy",
+            breed: "Lab",
+            age: 4
+        },
+        {
+            name: "Mr. Pig",
+            breed: "Mastif",
+            age: 10
+        }
+    ];
+
+    function getOlder(doggos) {
+        doggos.forEach(function(doggo) {
+            doggo.age += 1;
+        })
+        return doggos;
+    };
+    console.log(getOlder(doggos));
+    // ------------- PRACTICE 3
+<!--    //TODO: Write a function, washCars() that takes in a array of car objects and sets the boolean properties of isDirty to false-->
+
+<!--    // 1. Write a function -&ndash;&gt; named washed cars-->
+<!--    // 2. Takes in an array &ndash;&gt; parameter and loop-->
+<!--    // ​3. .isDirty - false-->
+
+<!--    var cars = [-->
+<!--        {-->
+<!--            make: 'Volvo',-->
+<!--            color: 'red',-->
+<!--            year: 1996,-->
+<!--            isDirty: true-->
+<!--        },-->
+<!--        {-->
+<!--            make: 'Toyota',-->
+<!--            color: 'black',-->
+<!--            year: 2004,-->
+<!--            isDirty: false-->
+<!--        },-->
+<!--        {-->
+<!--            make: 'Ford',-->
+<!--            color: 'white',-->
+<!--            year: 2007,-->
+<!--            isDirty: true-->
+<!--        }-->
+<!--    ];-->
+<!--​   function washCars(vrooms) {-->
+<!--        vrooms.forEach(function)-->
+
+<!--    }-->
+<!--    ​-->
+<!--    ​-->
+<!--    // ------------- PRACTICE 4-->
+<!--    // TODO: Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.-->
+<!--    ​-->
+<!--    var users = [-->
+<!--        {-->
+<!--            isAdmin: true,-->
+<!--            email: 'user1@email.com'-->
+<!--        },-->
+<!--        {-->
+<!--            isAdmin: true,-->
+<!--            email: 'user2@email.com'-->
+<!--        },-->
+<!--        {-->
+<!--            isAdmin: false,-->
+<!--            email: 'user3@email.com'-->
+<!--        }-->
+<!--    ];-->
+<!--​-->
+<!--    ​-->
+<!--    // ------------- PRACTICE 5-->
+<!--    //TODO: Create a function, makeSandwichObjects() that takes in two array of strings, breads and fillings and
+            returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays.
+            Assume the two array inputs are the same length.-->
+<!--    ​-->
+<!--    ​-->
+<!--    var breads  = [-->
+<!--        "white",-->
+<!--        "wheat",-->
+<!--        "rhy",-->
+<!--        "white"-->
+<!--    ];-->
+<!--​-->
+<!--    var fillings = [-->
+<!--        "pb&j",-->
+<!--        "ham",-->
+<!--        "cheese steak",-->
+<!--        "tuna"-->
+<!--    ];-->
+<!--​-->
+<!--    ​-->
+<!--    ​-->
+<!--    ​-->
+<!--</script>-->
+<!--​-->
+<!--​-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Practice Functions Solutions</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>JS Assessment Review</h1>-->
+<!--<ul>-->
+<!--    <li>Example for Mapbox API Exercise is up on GitHub (Link already shared in slack).</li>-->
+<!--    <li>Quiz after Lunch!</li>-->
+<!--    <li>Assessment tomorrow! (Loops, Arrays, and Objects)</li>-->
+<!--    <li>Thursday Tech Talk™: Mark Ross from H-E-B!</li>-->
+<!--    <li>Monthly Coding Challenge - Coding Luau this Thursday after class at the Geekdom Event Center!</li>-->
+<!--    <li>Learn To Code this Saturday - See Justin!</li>-->
+<!--</ul>-->
+
+<script>
+    "use strict";
+
+
+    // ------------- PRACTICE 1
+    //TODO: Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
+
+    var testInput = ["fred", true, 5, 3];
+
+    function filterNumbers(input) {
+        var newArr = [];                                            //new array for numbers to be pushed to
+        input.forEach(function(i) {                                 //iterating over testInput
+            if(!isNaN(i) && i != true && i != false)                //making sure only numbers are in the original array
+                newArr.push(i);                                     //pushing numbers to newArr
+        })
+        return newArr.sort();                                       // returning new array sorted in ascending order
+    }
+
+    filterNumbers(testInput);
+
+
+
+
+    // ------------- PRACTICE 2
+    // TODO: Write a function, getOlder() that takes in array of dog objects and increases the value of the age properties by 1.
+
+    var dogs = [
+        {
+            name: "Chompers",
+            breed: "Pug",
+            age: 7
+        },
+        {
+            name: "Freddy",
+            breed: "Lab",
+            age: 4
+        },
+        {
+            name: "Mr. Pig",
+            breed: "Mastif",
+            age: 10
+        }
+    ];
+
+    function getOlder(input) {
+        input.forEach(function(i) {                         // i = the parameter
+            return i.age + 1;                               // literally returns the age plus one
+        })
+    }
+    getOlder(dogs);
+
+    // ------------- PRACTICE 3
+    //TODO: Write a function, washCars() that takes in a array of car objects and sets the boolean properties of isDirty to false
+
+    var cars = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ];
+
+    function washCars(cars) {
+        cars.forEach(function(car) {
+            car.isDirty = false;
+            console.log(car.isDirty);
+        })
+        return cars;
+    }
+
+    console.log(washCars(cars));
+
+    washCars(cars);
+
+    // ------------- PRACTICE 4
+    // TODO: Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property.
+    //  Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
+
+    var users = [
+        {
+            isAdmin: true,
+            email: 'user1@email.com'
+        },
+        {
+            isAdmin: true,
+            email: 'user2@email.com'
+        },
+        {
+            isAdmin: false,
+            email: 'user3@email.com'
+        }
+    ];
+
+
+    // 1. Create a function --> adminList()
+    // 2. create an array of user objects
+    // 3. we need a counter variable and increasing count when isAdmin is true
+    // 4. returns count of the admin users
+
+                            function adminList(users) {
+                                var countOfAdmins = 0;
+                                users.forEach(function(user) {
+                                    if (user.isAdmin) {
+                                        countOfAdmins++;
+                                    }
+                                });
+                                return countOfAdmins;
+                            }
+
+
+    // adminList(users);
+
+    //-------------------- REFACTOR --------------------//
+
+                            function adminList(users) {
+                                var adminEmails = [];
+                                users.forEach(function(user) {
+                                    if (user.isAdmin) {
+                                        adminEmails.push(user.email)
+                                    }
+
+                                });
+
+                                return adminEmails;
+                            }
+        console.log(adminList(users));
+
+    function adminList(users) {
+        var admins = [];
+        users.forEach(function(user){
+
+            if (user.isAdmin) {
+                admins.push(user)
+            }
+        });
+        return admins;
+    }
+
+
+    // ------------- PRACTICE 5
+    //TODO: Create a function, makeSandwichObjects() that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
+    //     1. create a function --> makeSandwichObject()
+    //     2. takes in breads array and fillings array -->
+    //     3. loop through arrays --> match up the indexes
+    //     4. returning an array of objects --> need an empty array
+    //     5. need to create these sandwichObjects --> bread and filling
+
+
+
+
+    var breads  = [
+        "white",
+        "wheat",
+        "rhy",
+        "white"
+    ];
+
+    var fillings = [
+        "pb&j",
+        "ham",
+        "cheese steak",
+        "tuna"
+    ];
+
+    function makeSandwhichObject(breads, fillings) {
+        var sandwichArray = [];
+
+        for(var i = 0; i < breads.length; i++) {
+            var sandwichObject = {};
+            //create an object
+            sandwichObject.bread = breads[i];
+            sandwichObject.filling = fillings[i];
+
+            sandwichArray.push(sandwichObject);
+        }
+        return sandwichArray;
+    }
+
+    console.log(makeSandwhichObject(breads, fillings));
+
+
+</script>
+
+
+</body>
+</html>

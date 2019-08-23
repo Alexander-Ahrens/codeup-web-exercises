@@ -13,7 +13,7 @@
      */
 
     var person = {
-        firstName: "Alexander",
+        firstName: "Alexande",
         lastName: "Ahrens"
     };
 //    console.log("This person's name is " + this.firstName + " " + this.lastName);
