@@ -24,9 +24,9 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
-        var contents = $('#project-header').html();
-        alert(contents);
+    // $(document).ready(function() {
+    //     var contents = $('#project-header').html();
+    //     alert(contents);
 
     //
     // var contents = $('#spideyPepper').html();
@@ -40,8 +40,21 @@
     //
     // var h1Contents = $('h1').html();
 
-        $('li, p, h1').css('background', 'orange');
+        // $('li, p, h1').css('background', 'orange');
 
+
+//---------------------------------------------Exercise 2------------------------------------------
+
+        $('h1').click(function() {
+            $(this).css('background', 'purple')
+        });
+        $('p').dblclick(function() {
+            $(this).css('size', '18px');
+        })
+        $('li').hover(function() {
+            $this.css('color', 'red');
+        }, function() {
+            $(this).css('color', 'black');
     });
 
 </script>
