@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Konami Code</title>
+<style>
+    body{
+
+    }
+
+    #contraCover{
+        /*visibility: hidden;*/
+
+    }
+
+
+    </style>
 </head>
 <body>
+<img src="img/contraCover.jpg" height="16" width="16"/>
+<h1>Konami Code</h1>
+<div id="contraCover" class="contraCover"><img src="img/contraCover.jpg" alt=""></div>
+<!--<div src="" id="lullaby"></div>-->
+<!--<div src="" id="horse"></div>-->
+<!--<div src="" id="saria"></div>-->
+<!--<div src="" id="sun"></div>-->
+<!--<div src="" id="pocketWatch"></div>-->
+<!--<div src="" id="rain"></div>-->
 
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    function konamiCode() {
+        var cheatCode = '';
+        var correctKonamiCode = '38384040373937396665';
+        document.addEventListener('keydown', function (e) {
+            cheatCode += ("" + e.keyCode);
+            if (cheatCode === correctKonamiCode) {
+                // document.body.style.backgroundImage = "url ('img/File-Contra_cover.jpg')";
+                alert('You have added 30 lives!');
+                $("#contraCover").css({
+                    "visibility": 'visible'
+                })
+            }
+        });
+    }
+    konamiCode();
+
+</script>
 </body>
 </html>
