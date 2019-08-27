@@ -6,5 +6,66 @@
 </head>
 <body>
 
+<style>
+    .invisible {
+        visibility: hidden;
+    }
+</style>
+
+<script>
+    "use strict";
+    // $(function() {
+    //     $('dt').click(function () {
+    //         $('this').toggleClass('invisible');
+    //     });
+    // };
+    $(document).ready(function() {
+        $('#styler').click(function() {
+            $('dd').toggleClass('invisible')
+        });
+
+        $('dt').click(function() {
+            $(this).css('background', 'yellow')
+        });
+    });
+
+
+
+
+</script>
+<button id="styler">Visibility!</button>
+<dl>
+    <dt class="highlight">How do I get to Yosemite?</dt>
+    <dd class="invisible">Keeping in mind that GPS units often provide incorrect driving directions in and around Yosemite, please take a look at our driving directions..</dd>
+
+    <dt>Are there vehicle restrictions in Yosemite? </dt>
+    <dd class="invisible">Some roads have vehicle restrictions on height, length, and/or width.</dd>
+
+    <dt>Can I drive my own vehicle into the park?</dt>
+    <dd class="invisible">You can drive your own vehicle into and around Yosemite (shuttle buses are not mandatory, but are recommended).</dd>
+
+    <dt>Will I need to bring tire chains?</dt>
+    <dd class="invisible">Tire chains may be required in fall, winter, and spring due to snowy or icy conditions. It's not possible to predict when exactly they may be required since requirements are based on conditions.</dd>
+
+    <dt>Will the Tioga Road be open?</dt>
+    <dd class="invisible">The Tioga Road (Highway 120 through the park, from Crane Flat to Tioga Pass) is open approximately late May through October, though these dates vary depending on conditions. View a list of opening and closing dates since 1980.</dd>
+
+    <dt>When is the best time of year to visit Yosemite?</dt>
+    <dd class="invisible">It depends what you're looking for! While most people visit Yosemite during summer, there are advantages to visiting throughout the year.</dd>
+
+    <dt>When do the Half Dome cables go up and come down?</dt>
+    <dd class="invisible">The Half Dome cables are normally installed immediately before Memorial Day weekend, but this can vary depending on conditions and trail crew availability. The cables usually remain up through Columbus Day (in October). A permit is required to hike Half Dome. The National Park Service strongly discourages hikers from attempting the cable route when the cables are down. Learn more about the Half Dome hike.</dd>
+
+    <dt>Where can I see giant sequoias?</dt>
+    <dd class="invisible">There are three giant sequoia groves in Yosemite National Park: the Mariposa Grove, the Tuolumne Grove, and the Merced Grove.</dd>
+
+    <dt>Where and when can I see Horsetail Fall, the waterfall that resembles the Firefall?</dt>
+    <dd class="invisible">Horsetail Fall flows in winter and early spring, when snow is present on top of El Capitan. On sunny afternoons in mid- to late February, the setting sun can cause it to glow orange.</dd>
+
+    <dt>Where and when can I see frazil ice?</dt>
+    <dd class="invisible">Frazil ice forms along Yosemite Creek, and some other creeks in Yosemite Valley, most commonly in March and April. The phenomenon is entirely weather-dependent, so it's difficult to know when exactly it may happen (or if it will happen at all).
+    </dd>
+</dl>
+
 </body>
 </html>
