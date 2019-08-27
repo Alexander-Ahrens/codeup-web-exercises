@@ -3,50 +3,148 @@
 <head>
     <title>Konami Code</title>
 <style>
-    body{
-
+    body {
+        background-color: #111111;
+        width: auto;
     }
 
-    #contraCover{
-        /*visibility: hidden;*/
-
+    h1 {
+        color: white;
+        text-align: center;
     }
 
+    img {
+        margin-left: 550px;
+    }
+
+    .lullaby {
+        margin-left: 500px;
+    }
 
     </style>
 </head>
 <body>
-<img src="img/contraCover.jpg" height="16" width="16"/>
-<h1>Konami Code</h1>
-<div id="contraCover" class="contraCover"><img src="img/contraCover.jpg" alt=""></div>
-<!--<div src="" id="lullaby"></div>-->
-<!--<div src="" id="horse"></div>-->
-<!--<div src="" id="saria"></div>-->
-<!--<div src="" id="sun"></div>-->
-<!--<div src="" id="pocketWatch"></div>-->
-<!--<div src="" id="rain"></div>-->
+<h1><strong>CHEAT CODES</strong></h1>
+<div id="contraCover" class="contraCover"></div>
+<div src="img/ZLullaby.gif" id="lullaby" class="lullaby"></div>
+<div src="eponaSong.gif" id="horse" class="horse"></div>
+<div src="img/sariasSong.gif" id="saria" class="saria"></div>
+<div src="img/sunsSong.gif" id="sun" class="sun"></div>
+<div src="img/songOfTime.gif" id="time" class="time"></div>
+<div src="img/song-of-storms.png" id="storms" class="storms"></div>
+<div>
+    <iframe src="" frameborder="0"></iframe></div>
 
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-    function konamiCode() {
-        var cheatCode = '';
-        var correctKonamiCode = '38384040373937396665';
-        document.addEventListener('keydown', function (e) {
-            cheatCode += ("" + e.keyCode);
-            if (cheatCode === correctKonamiCode) {
-                // document.body.style.backgroundImage = "url ('img/File-Contra_cover.jpg')";
-                alert('You have added 30 lives!');
-                $("#contraCover").css({
-                    "visibility": 'visible'
-                })
-            }
-        });
-    }
-    konamiCode();
+    function codes() {
 
+        var code = '';
+
+        var correctKonamiCode = '38384040373937396665';
+        var ZLSequence = '373839373839';
+        var ESSequence = '383739383739';
+        var SSSequence = '403937403937';
+        var sunSSequence = '394038394038';
+        var sotSequence = '396540396540';
+        var songOfStorms = '654038654038';
+        var STF = '3739404066'
+
+        document.addEventListener('keydown', function (e) {
+            code += ("" + e.keyCode);
+
+//---------------------------- Konami Cheat Code ----------------------------
+
+            if (code === correctKonamiCode) {
+                // alert('You have added 30 lives!');
+                $('h1').html('YOU HAVE ADDED 30 LIVES!');
+                $("#contraCover").html('<img src="img/contra.webp"/>');
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+
+//----------------------------- Zelda's Lullaby -----------------------------
+
+            if (code === ZLSequence) {
+                $('h1').html('Zelda \'s Lullaby');
+                $("#lullaby").html('<img src="eponaSong.gif"/>');
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+
+
+            // document.addEventListener('keydown', function (e) {
+            //     input += ("" + e.keyCode);
+            //     if (input === konamiKey) {
+            //         $('h1').html('YOU HAVE ADDED 30 LIVES');
+            //         $('#image').html('<img id="image" src="img/contraStartScreen.jpg" />');
+            //         $('#audio').html('<audio autoplay><source src="audio/contra.mp3"></audio>');
+            //         input = ''
+            //     }
+
+
+            //----------------------------- Epona's Song -----------------------------
+
+            if (code === ESSequence) {
+                $('h1').html('Epona \'s Song');
+                $("#horse").html('<img src="img/eponas-song.png"/>');
+                code = '';
+            }
+
+            //----------------------------- Saria's Song -----------------------------
+
+            if (code === SSSequence) {
+                $('h1').html('Saria \'s Song');
+                $("#saria").html('<img src="img/sariasSong.gif"/>');
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+
+            //------------------------------ Sun's Song ------------------------------
+
+            if (code === sunSSequence) {
+                $('h1').html('Sun \'s Song');
+                $("#sun").html('<img src="img/sunsSong.gif"/>');
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+
+            //----------------------------- Song of Time -----------------------------
+
+            if (code === sotSequence) {
+                $('h1').html('Song of Time');
+                $("#time").html('<img src="img/songOfTime.gif"/>');
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+
+            //---------------------------- Song of Storms ----------------------------
+
+
+            if (code === songOfStorms) {
+                $('h1').html('Song of Storms');
+                $("#storms").html('<img src="img/songOfStorms.gif"/>');
+                $("#audio").html("<audio autoplay><source src='MP3/Song of Storms.mp3'></audio>");
+                code = '';
+            }
+
+            //---------------------------- FATALITY ----------------------------
+
+            if (code === STF) {
+                $('h1').html('FATALITY');
+                $("#fatality").html(<iframe width="420" height="315" id="fatality"
+                                            src="https://youtu.be/3wTLT2yKuww?t=2">
+                </iframe>);
+                // $("#audio").html("<audio autoplay><source src=''></audio>");
+                code = '';
+            }
+        })
+    }
+    codes();
+        
 </script>
 </body>
 </html>
