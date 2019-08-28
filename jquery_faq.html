@@ -5,13 +5,28 @@
     .invisible {
         visibility: hidden;
     }
+
+    #national-parks {
+        display: none;
+    }
+
+    #smokey-list {
+        display: none;
+    }
+
+    #arctic-list {
+        display: none;
+    }
+
 </style>
     <meta charset="UTF-8">
     <title>Parks and Stuffs</title>
 </head>
 <body>
-
-
+<div>
+    <h3>Would you like to sign up for our news letter?</h3>
+    <span>x</span>
+</div>
 
 <dl>
     <dt class="highlight">How do I get to Yosemite?</dt>
@@ -55,16 +70,16 @@
     <li>random fact 4</li>
 </ul>
 
-<h3>Great Smokey Mountains National Park</h3>
-<ul>
+<h3 id="smokey">Great Smokey Mountains National Park</h3>
+<ul id="smokey-list">
     <li>random fact 1</li>
     <li>random fact 2</li>
     <li>random fact 3</li>
     <li>random fact 4</li>
 </ul>
 
-<h3>Gates of The Arctic</h3>
-<ul>
+<h3 id="arctic">Gates of The Arctic</h3>
+<ul id="arctic-list">
     <li>random fact 1</li>
     <li>random fact 2</li>
     <li>random fact 3</li>
@@ -74,7 +89,7 @@
 <button id="styler">Visibility!</button>
 <button id="highlighter">Highlight</button>
 
-<script src="js/jquery-2.2.4.js"></script>
+<script src="../dom-warmup/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
@@ -113,6 +128,21 @@
         });
     });
 
+    $('span').click(function() {
+        $('div').hide();
+    });
+
+    $('#national-parks-heading').click(function() {
+        $('#national-parks').slideToggle();
+    });
+
+    $('#smokey').click(function() {
+        $('#smokey-list').slideToggle();
+    });
+
+    $('#arctic').click(function() {
+        $('#arctic-list').slideToggle();
+    });
 
 </script>
 </body>
