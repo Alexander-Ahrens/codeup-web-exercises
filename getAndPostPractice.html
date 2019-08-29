@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GET and POST Practice</title>
+</head>
+<body>
+<script src="../dom-warmup/jquery-2.2.4.js"></script>
+<script src=""></script>
+<script>
+    $.ajax({
+        type: "POST",
+        url: "https://hookb.in/QJXL2jX7ogT9r92db7Jx",
+        data: JSON.stringify({
+            "name": "John"
+        }),
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            console.log("done.");
+        }
+    });
+
+
+</script>
+
+
+
+</body>
+</html>
