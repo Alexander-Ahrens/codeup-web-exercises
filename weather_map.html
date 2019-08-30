@@ -8,7 +8,7 @@
 <script src="keys.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
-    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "29.4241,-98.4936").done(function(data) {
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
         console.log(data);
     })
 
@@ -17,6 +17,15 @@
 
 
 </script>
+
+<h1><u>Today's Weather</u></h1>
+<h5>Brought to you by - <em>Alexander The Great</em></h5>
+<div>
+    <h1 id="day"></h1>
+
+</div>
+
+
 
 </body>
 </html>
