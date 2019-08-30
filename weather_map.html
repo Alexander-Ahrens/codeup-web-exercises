@@ -14,11 +14,10 @@
     <img src="" alt="">
     <p><strong>Humidity:</strong></p>
     <p><strong>Wind:</strong></p>   <!--- possibly wind direction as well? --->
-    <p>Pressure:</p>
+    <p><strong>Pressure:</strong></p>
+
 </div>
 <div id="insertData"></div>
-
-
 
 <script src="keys.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
@@ -38,26 +37,24 @@
 
 
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
-        $(insertData).html(buildHTML(data));
         console.log(data);
-    });
 
-
-    function buildHTML(weatherData) {
         var weatherHTML = "";
-        weatherData.forEach(function (weatherData) {
-            weatherHTML += "<div>";
-            weatherHTML += "<h2>" + weatherData.location + "</h2>";
+            for(var i = 0; i <= 2; i++) {
+                weatherHTML += "<div>";
+                weatherHTML += "<p" + data.daily.data[i].temperatureHigh + "</p>";
+                weatherHTML += "<p" + data.daily.data[i].temperatureLow + "</p>";
+                weatherHTML += "<p>" + data.daily.data[i].windBearing + "</p>";
             // icon of whatever weather goes here
             // weatherHTML += "<img>" + weatherData.icon + "";
-            weatherHTML += "<p>" + weatherData.temperature + "</p>";
-            weatherHTML += "<p>" + weatherData.humidity + "</p>";
-            weatherHTML += "<p>" + weatherData.wind + "</p>";
-            weatherHTML += "<p>" + weatherData.pressure + "</p>";
-            weatherHTML += "<div>";
-        });
+            //     weatherHTML += "<p>" + weatherData.temperature + "</p>";
+            //     weatherHTML += "<p>" + weatherData.humidity + "</p>";
+            //     weatherHTML += "<p>" + weatherData.wind + "</p>";
+            //     weatherHTML += "<p>" + weatherData.pressure + "</p>";
+                weatherHTML += "<div>";
+        }
         $("#insertData").html(weatherHTML);
-    }
+});
 
 
 </script>
