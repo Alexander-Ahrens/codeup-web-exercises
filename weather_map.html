@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Weathers R' Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-icons-master/css/weather-icons.css">
 </head>
 <body>
+<i class="wi wi-cloud " style="font-size: 80px"></i>
 <h1><u>Today's Weather</u></h1>
 <h5>Brought to you by - <em>Alexander The Great</em></h5>
-<div>
-    <h2>Location</h2>
-<!--    <h3 id="conditions">Current conditions:</h3>-->
+<div class="container">
+<!--<div>-->
+<!--    <h2>Location</h2>-->
+<!--&lt;!&ndash;    <h3 id="conditions">Current conditions:</h3>&ndash;&gt;-->
 
-    <img src="" alt="">
-    <p><strong>Humidity:</strong></p>
-    <p><strong>Wind:</strong></p>   <!--- possibly wind direction as well? --->
-    <p><strong>Pressure:</strong></p>
+<!--    <img src="" alt="">-->
+<!--    <p><strong>Humidity:</strong></p>-->
+<!--    <p><strong>Wind:</strong></p>   &lt;!&ndash;- possibly wind direction as well? -&ndash;&gt;-->
+<!--    <p><strong>Pressure:</strong></p>-->
 
+<!--</div>-->
+<!--    <div class="row">-->
+        <div class='row' id="insertData">
+
+        </div>
+<!--    </div>-->
 </div>
-<div id="insertData"></div>
-
 <script src="keys.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -35,23 +43,85 @@
 
     "use strict";
 
+        var iconArr = [
+            {
+                iconName: "clear-day",
+                icon: 'wi-day-sunny'
+            },
 
+            {
+                iconName: "clear-night",
+                icon: 'wi-night-clear'
+            },
+
+            {
+                iconName: "rain",
+                icon: 'wi-rain'
+            },
+
+            {
+                iconName: "snow",
+                icon: 'wi-snow'
+            },
+
+            {
+                iconName: "sleet",
+                icon: 'wi-sleet'
+            },
+
+            {
+                iconName: "wind",
+                icon: 'wi-windy'
+            },
+
+            {
+                iconName: "fog",
+                icon: 'wi-fog'
+            },
+
+            {
+                iconName: "cloudy",
+                icon: 'wi-cloudy'
+            },
+
+            {
+                iconName: "partly-cloudy-day",
+                icon: 'wi-day-cloudy'
+            },
+
+            {
+                iconName: "partly-cloudy-night",
+                icon: 'wi-night-alt-cloudy'
+            }
+        ];
+
+        function getIcon(input) {
+            for(var i = 0; i <= iconArr.length; i++) {
+                if(iconArr[i].iconName === input) {
+                    return iconArr[i].icon;
+                }
+            }
+        }
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
+
         console.log(data);
 
         var weatherHTML = "";
             for(var i = 0; i <= 2; i++) {
-                weatherHTML += "<div>";
-                weatherHTML += "<p" + data.daily.data[i].temperatureHigh + "</p>";
-                weatherHTML += "<p" + data.daily.data[i].temperatureLow + "</p>";
-                weatherHTML += "<p>" + data.daily.data[i].windBearing + "</p>";
+                        weatherHTML += '<div class="col-4 card text-center">';
+                            weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;/' + (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
+                            weatherHTML += '<i style="font-size: 30pt" class="wi ' + getIcon(data.daily.data[i].icon) + '"></i>';
+                            weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
+                            weatherHTML += '<p><strong>Humidity: </strong>' + (data.daily.data[i].humidity * 100).toFixed(0) + '</p>';
+                            weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
+                            weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
+                        weatherHTML += '</div>';
             // icon of whatever weather goes here
             // weatherHTML += "<img>" + weatherData.icon + "";
             //     weatherHTML += "<p>" + weatherData.temperature + "</p>";
             //     weatherHTML += "<p>" + weatherData.humidity + "</p>";
             //     weatherHTML += "<p>" + weatherData.wind + "</p>";
             //     weatherHTML += "<p>" + weatherData.pressure + "</p>";
-                weatherHTML += "<div>";
         }
         $("#insertData").html(weatherHTML);
 });
