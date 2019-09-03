@@ -102,6 +102,8 @@
                 }
             }
         }
+
+
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
 
         console.log(data);
@@ -116,12 +118,6 @@
                             weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
                             weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
                         weatherHTML += '</div>';
-            // icon of whatever weather goes here
-            // weatherHTML += "<img>" + weatherData.icon + "";
-            //     weatherHTML += "<p>" + weatherData.temperature + "</p>";
-            //     weatherHTML += "<p>" + weatherData.humidity + "</p>";
-            //     weatherHTML += "<p>" + weatherData.wind + "</p>";
-            //     weatherHTML += "<p>" + weatherData.pressure + "</p>";
         }
         $("#insertData").html(weatherHTML);
 });
