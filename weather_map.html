@@ -3,33 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Weathers R' Us</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- PULLS WEATHER ICONS -->
     <link rel="stylesheet" href="css/weather-icons-master/css/weather-icons.css">
+
+    <!-- MAPBOX API -->
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
+
 </head>
 <body>
-<i class="wi wi-cloud " style="font-size: 80px"></i>
-<h1><u>Today's Weather</u></h1>
-<h5>Brought to you by - <em>Alexander The Great</em></h5>
-<div class="container">
-<!--<div>-->
-<!--    <h2>Location</h2>-->
-<!--&lt;!&ndash;    <h3 id="conditions">Current conditions:</h3>&ndash;&gt;-->
 
-<!--    <img src="" alt="">-->
-<!--    <p><strong>Humidity:</strong></p>-->
-<!--    <p><strong>Wind:</strong></p>   &lt;!&ndash;- possibly wind direction as well? -&ndash;&gt;-->
-<!--    <p><strong>Pressure:</strong></p>-->
-
-<!--</div>-->
-<!--    <div class="row">-->
-        <div class='row' id="insertData">
-
-        </div>
-<!--    </div>-->
+<!--    BASIC HTML FOR WEATHER DISPLAY  -->
+<div class="top-container">
+    <i class="wi wi-cloud " style="font-size: 80px"></i>
+    <h1><u>Today's Weather</u></h1>
+    <h5>Brought to you by - <em>Alexander The Great</em></h5>
 </div>
-<script src="keys.js"></script>
-<script src="js/jquery-2.2.4.js"></script>
+<div class="container">
+    <div class='row' id="insertData"></div>
+</div>
+<br>
+<!--   LAT AND LNG INPUTS   -->
+<div id='map'></div>
+<div class="lng-lat-input container">
+    <input class="lat-input" type="text" placeholder="latitude">
+    <br>
+    <input class="lng-input" type="text" placeholder="longitude">
+    <br>
+    <button class="submit">Submit</button>
+
+</div>
+<br>
+<style>
+
+    body {
+        background-color: skyblue;
+        text-align: center;
+    }
+    
+    h5  {
+        padding-bottom: 20px;
+    }
+
+    .top-container {
+        background-color: white;
+    }
+    
+    .container {
+        padding-top: 22px;
+    }
+
+    #map {
+        /* the width and height may be set to any size */
+        padding-top: 20px;
+        width: 59%;
+        height: 700px;
+        margin:0px auto;
+    }
+
+    .lng-lat-input{
+        padding-top: 10px;
+    }
+
+    .lng-input {
+        margin-top: 10px;
+    }
+    
+    .submit {
+        margin-top: 10px;
+        margin-left: 123px;
+    }
+
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+
+<script src="keys.js"></script>
 <script>
     /** ----------------------MINIMUM REQUIREMENTS-----------------------
      * 0. Locate where (city) weather is. (Do this last maybe..???)
@@ -42,7 +99,7 @@
      */
 
     "use strict";
-
+//-------------------- WEATHER ARRAY --------------------
         var iconArr = [
             {
                 iconName: "clear-day",
@@ -94,7 +151,7 @@
                 icon: 'wi-night-alt-cloudy'
             }
         ];
-
+    //  For loop that iterates through icons depending on the weather
         function getIcon(input) {
             for(var i = 0; i <= iconArr.length; i++) {
                 if(iconArr[i].iconName === input) {
@@ -104,24 +161,68 @@
         }
 
 
-    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936").done(function(data) {
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4916, 29.4252],
+        zoom: 10
+    });
 
+    var lat = 29.424;
+    var long = -984936;
+
+    map.addControl(new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        marker: false
+    }));
+
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([long, lat])
+        .addTo(map);
+
+        map.on("moveend", function() {
+            marker.setLngLat(map.getCenter());
+            dragPoint();
+        });
+
+        function dragPoint() {
+            var lngLat = marker.getLngLat();
+            var newLat = lngLat.lng;
+            var newLng = lngLat.lat;
+
+
+
+
+    //Links to dark sky weather API information
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + newLng + "," + newLat).done(function(data) {
         console.log(data);
 
+        //Pulls forcast from weather API and displays it
         var weatherHTML = "";
-            for(var i = 0; i <= 2; i++) {
-                        weatherHTML += '<div class="col-4 card text-center">';
-                            weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;/' + (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
-                            weatherHTML += '<i style="font-size: 30pt" class="wi ' + getIcon(data.daily.data[i].icon) + '"></i>';
-                            weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
-                            weatherHTML += '<p><strong>Humidity: </strong>' + (data.daily.data[i].humidity * 100).toFixed(0) + '</p>';
-                            weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
-                            weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
-                        weatherHTML += '</div>';
+        for(var i = 0; i <= 2; i++) {
+            weatherHTML += '<div class="col-4 card text-center">';
+            weatherHTML += '<h1>' + (data.daily.data[i].temperatureHigh).toFixed(0) + '&deg;/' +
+                (data.daily.data[i].temperatureLow).toFixed(0) + '&deg;</h1>';
+
+            weatherHTML += '<i style="font-size: 30pt" class="wi ' +
+                getIcon(data.daily.data[i].icon) + '"></i>';        //icon display
+
+            weatherHTML += '<p><strong>' + data.daily.data[i].summary + ' </strong>' + '</p>';
+            weatherHTML += '<p><strong>Humidity: </strong>' +
+                (data.daily.data[i].humidity * 100).toFixed(0) + '</p>';
+            weatherHTML += '<p><strong>Wind: </strong>' + data.daily.data[i].windSpeed + '</p>';
+            weatherHTML += '<p><strong>Pressure: </strong>' + data.daily.data[i].pressure + '</p>';
+            weatherHTML += '</div>';
         }
         $("#insertData").html(weatherHTML);
-});
-
+    });
+    }
+        marker.on('drag', dragPoint);
+        dragPoint();
 
 </script>
 

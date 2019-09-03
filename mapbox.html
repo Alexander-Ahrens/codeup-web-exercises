@@ -30,6 +30,8 @@
 
 <!-- the required script for Mapbox -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 
 <!-- the script for geocoding from the curriculum -->
 <script src="js/mapbox-utils.js"></script>
@@ -106,6 +108,7 @@
         placeAllMarkers(restaurants, map);
         resetMapOverMarkers(map, restaurants);
     });
+
 </script>
 
 </body>
