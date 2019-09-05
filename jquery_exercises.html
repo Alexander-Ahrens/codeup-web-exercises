@@ -24,38 +24,54 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-    // $(document).ready(function() {
-    //     var contents = $('#project-header').html();
-    //     alert(contents);
+    $(document).ready(function() {
+        var contents = $('#project-header').html();
+        alert(contents);
 
-    //
-    // var contents = $('#spideyPepper').html();
-    // alert(contents);
 
-    // jQuery('.codeup').css('border', '1px solid red');
+        var contents = $('#spideyPepper').html();
+        alert(contents);
 
-    // $('li').css('font-size', '20px').css('background', 'yellow');
-    // $('p').css('background', 'yellow');
-    // $('h1').css('background', 'yellow');
-    //
-    // var h1Contents = $('h1').html();
+        jQuery('.codeup').css('border', '1px solid red');
 
-        // $('li, p, h1').css('background', 'orange');
+        $('li').css('font-size', '20px').css('background', 'yellow');
+        $('p').css('background', 'yellow');
+        $('h1').css('background', 'yellow');
+
+        var h1Contents = $('h1').html();
+
+        $('li, p, h1').css('background', 'orange');
 
 
 //---------------------------------------------Exercise 2------------------------------------------
 
-        $('h1').click(function() {
+        $('h1').click(function () {
             $(this).css('background', 'purple')
         });
-        $('p').dblclick(function() {
+        $('p').dblclick(function () {
             $(this).css('size', '18px');
         })
-        $('li').hover(function() {
-            $this.css('color', 'red');
-        }, function() {
+        $('li').hover(function () {
+            $(this).css('color', 'red');
+        }, function () {
             $(this).css('color', 'black');
-    });
+        });
+
+
+        $('li').click(function () {
+            $('li').html("Got 'em"); //'li' targets all list items, 'this' targets just one.
+        })
+    })
+
+
+    //Heres the CDN you can use for the jquery assesment.
+
+        //<script
+    //<!--src = "https://code.jquery.com/jquery-2.2.4.js"-->
+    //<!--integrity = "sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="-->
+    //<!--crossOrigin = "anonymous"
+
+
 
 </script>
 </body>
