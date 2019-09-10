@@ -48,22 +48,45 @@
 
 // /users/:username/events/public
 
-function getGithubUsername(name) {
-    return fetch(`https://api.github.com/users/${name}/events/public`,
-        {
-            headers:
-                {'Authorization': `token ${githubToken}`}
-        })
-    .then(response => response.json())
-    .then(users => users.filter(function (objects) {
-        return objects.type === "PushEvent"
-    }))
-        .then(obj => console.log(obj))
 
-    };
+//========================================= Almost Answer ===================================
+
+// function getGithubUsername(name) {
+//     return fetch(`https://api.github.com/users/${name}/events/public`,
+//         {
+//             headers:
+//                 {'Authorization': `token ${githubToken}`}
+//         })
+//     .then(response => response.json())
+//     .then(users => users.filter(function (objects) {
+//         return objects.type === "PushEvent"
+//     }))
+//         .then(obj => console.log(obj))
+//
+//     };
+//
+//
+// getGithubUsername("Alexander-Ahrens")
 
 
-getGithubUsername("Alexander-Ahrens")
+//========================================= Justin's Answer ===================================
+
+function getMostRecentCommitDate(username) {
+    return fetch(`https://api.github.com/users/${name}/events/public`, {headers:
+        {'Authorization': `token ${githubToken}`}
+    })
+        .then (res => res.json())
+        .then(events => {
+            return events.filter(event => event.type === "PushEvent") [0].created_at;
+        });
+}
+
+getMostRecentCommitDate('Alexander-Ahrens').then(date => {
+    console.log(new Date(date).toDateString());
+});
+
+//========================================= Mark's Answer ===================================
+
 
 
 
