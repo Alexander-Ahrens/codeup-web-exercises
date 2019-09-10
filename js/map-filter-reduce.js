@@ -48,6 +48,48 @@ let totalYears = users.reduce((total, number) => {
 console.log(totalYears);
 
 let longestEmail = users.reduce((emailAddress, emailLength) => {
-    return emailAddress.length > emailLength.email ? emailAddress : emailLength;
+    return emailAddress.length > emailLength.email ? emailAddress : emailLength; //if (longestEmail.length < emailLength.email.length) { longestEmail = user.email; } return longestEmail;})
 });
 console.log(longestEmail);
+
+// const allInstructors = () => {
+//     let instructorNames =
+//         users.reduce((finalString, person) => finalString +=
+//             `${person.name}, `, "");
+//     temp = `Your instructors are: `;
+//     instructorNames.substring(0,
+//         (instructorNames.length - 2));
+//     return temp + `${person.name}.`;
+//
+// };
+// console.log(allInstructors);
+
+let instructors = users.reduce((sentence, user, i) => {
+    if (i < users.length - 1) {
+        sentence += user.name + ", ";
+    } else {
+        sentence += `and ${user.name}.`
+    }
+    return sentence;
+}, "Your instructors are: ");
+console.log(instructors);
+
+
+//======================= BONUS =======================//
+
+// const uniqueListOfLangs = users.reduce((listOfLangs, user) => {
+//     for (const lang of user.languages) {
+//         if (listOfLangs.indexOf(lang) === -1) {
+//             listOfLangs.push(lang);
+//         }
+//     }
+//     return listOfLangs
+// }, []);
+// uniqueListOfLangs;
+
+let listOfLanguages = users.reduce((accumulator, user) => {
+    user.languages.map(language => accumulator.push(language));
+    return accumulator;
+}, []);
+
+console.log(listOfLanguages);
