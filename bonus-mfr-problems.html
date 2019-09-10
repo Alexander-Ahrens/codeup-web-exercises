@@ -95,7 +95,7 @@
         // PROBLEM 2 - create array of user objects based on the customers array
         // of objects (each user object should just have name and age properties)
 
-        const user = customers.filter((user) => delete user.noOfPurchases / delete user.occupation);
+        // const user = customers.filter((user) => delete user.noOfPurchases / delete user.occupation);
         // console.log(user);
 
         // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
@@ -115,7 +115,10 @@
         console.log(civilServant);
 
         // PROBLEM 4 - determine the average age of customers
-
+        let avgAge = customers.reduce((total, number) => {
+            return total + number.age / customers.length;
+        }, 0);
+        console.log(avgAge)
         // PROBLEM 5 - create a function makeSuperPet() that takes in the pets array as input and returns a single pet object
         // with the following shape...
         /*
