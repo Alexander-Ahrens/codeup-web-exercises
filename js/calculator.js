@@ -1,3 +1,10 @@
+
+function isNotANumber() {
+    if (x.isNaN() || y.isNaN()) {
+        console.log(x + " is not a number");
+    }
+}
+
 function add (x, y) {
     x = 0;
     y = 0;
@@ -15,14 +22,15 @@ subtract();
 function multiply(x, y) {
     var z = x * y;
 }
+multiply();
 
 function divide(x, y) {
     if (y === 0) {
-        console.log("You cannot divide by zero. Try again.");
+        console.log("ERROR: Cannot divide by zero. Try again.");
     } else {
         var z = x / y;
     }
-
+divide();
 
 
 }
