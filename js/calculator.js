@@ -1,3 +1,5 @@
+var pi = 3.14159
+
 
 function isNotANumber() {
     if (x.isNaN() || y.isNaN()) {
